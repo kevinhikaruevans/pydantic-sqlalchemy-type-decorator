@@ -11,6 +11,15 @@ You can install this package using pip:
 pip install pydantic_sqlalchemy_deco
 ```
 
+### Requirements
+
+This library requires:
+- Pydantic 2+
+- SQLAlchemy (2.0+?)
+- Postgres with JSONB support
+
+Other versions may be supported as well, but please open an [issue](https://github.com/kevinhikaruevans/pydantic-sqlalchemy-type-decorator/issues) if you run into any problems.
+
 ## Usage
 
 Given some Pydantic model called `MyCustomModel`, you can specify your columns like:
