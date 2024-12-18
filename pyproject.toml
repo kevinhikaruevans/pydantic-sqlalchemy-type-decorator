@@ -1,0 +1,27 @@
+[project]
+name = "pydantic_sqlalchemy_deco"
+version = "0.0.1"
+authors = [
+  { name="Kevin Evans", email="evans.kevinh@gmail.com" },
+]
+description = "Seamlessly use Pydantic 2 models in a Postgres SQLAlchemy model"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "pydantic",
+  "sqlalchemy",
+  "psycopg2"
+]
+
+[project.urls]
+Homepage = "https://github.com/kevinhikaruevans/pydantic-sqlalchemy-type-decorator"
+Issues = "https://github.com/kevinhikaruevans/pydantic-sqlalchemy-type-decorator/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
