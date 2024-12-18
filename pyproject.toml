@@ -1,6 +1,6 @@
 [project]
 name = "pydantic_sqlalchemy_deco"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Kevin Evans", email="evans.kevinh@gmail.com" },
 ]
@@ -25,3 +25,8 @@ Issues = "https://github.com/kevinhikaruevans/pydantic-sqlalchemy-type-decorator
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.mypy]
+files = "pydantic_sqlalchemy_deco"
+disallow_untyped_calls = true
+disallow_untyped_defs = true
