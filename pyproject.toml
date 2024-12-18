@@ -1,6 +1,6 @@
 [project]
 name = "pydantic_sqlalchemy_deco"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Kevin Evans", email="evans.kevinh@gmail.com" },
 ]
