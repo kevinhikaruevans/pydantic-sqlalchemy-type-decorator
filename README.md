@@ -20,11 +20,29 @@ from pydantic_sqlalchemy_deco.decorator import PydanticJSON
 
 ...
 
-class MyTable(Base):
+# Define Pydantic model somewhere:
+class MyCustomModel(BaseModel):
+    custom_id: int = 0
 
-    response: Mapped[MyCustomModel] = mapped_column(PydanticJSON(MyCustomModel))
+
+# Define your SQLAlchemy model:
+class MyEntry(Base):
+
+    custom_data: Mapped[MyCustomModel] = mapped_column(PydanticJSON(MyCustomModel))
 ```
 
+Then, you can use the `custom_data` column as you'd expect:
+
+```python
+entry = MyEntry(
+    custom_data=MyCustomModel(custom_id=1234)
+)
+
+...
+
+print(entry.custom_data.custom_id)
+
+```
 
 
 # BaseModel changes
@@ -32,5 +50,5 @@ class MyTable(Base):
 If your `BaseModel` has custom serializers, you can specify this using the `T` parameter:
 
 ```python
-    response: Mapped[MyCustomModel] = mapped_column(PydanticJSON[CoolerBaseModel](MyCustomModel))
+    custom_data: Mapped[MyCustomModel] = mapped_column(PydanticJSON[CoolerBaseModel](MyCustomModel))
 ```
